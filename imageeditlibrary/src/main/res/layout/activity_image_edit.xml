@@ -5,7 +5,6 @@
     android:orientation="vertical"
     android:background="@color/black">
 
-
     <FrameLayout
         android:id="@+id/work_space"
         android:layout_width="fill_parent"
@@ -23,7 +22,6 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_gravity="center" />
-
 
         <com.yjing.imageeditlibrary.editimage.view.CustomPaintView
             android:id="@+id/custom_paint_view"
@@ -56,8 +54,6 @@
             android:layout_height="fill_parent"
             android:layout_gravity="center"
             android:visibility="gone" />
-
-
     </FrameLayout>
 
     <include layout="@layout/edit_image_header" />
@@ -67,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/bottom_banner_height"
         android:layout_alignParentBottom="true"
-        android:background="@color/bottom_banner_bg"></FrameLayout>
+        android:background="@color/bottom_banner_bg"/>
 
     <FrameLayout
         android:id="@+id/fl_edit_bottom_height"
@@ -75,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/bottom_banner_bg"
-        android:visibility="gone"></FrameLayout>
+        android:visibility="gone"/>
 
     <FrameLayout
         android:id="@+id/fl_edit_bottom_full"
@@ -83,13 +79,13 @@
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
         android:background="@color/bottom_banner_bg"
-        android:visibility="gone"></FrameLayout>
+        android:visibility="gone"/>
+
     <FrameLayout
         android:id="@+id/fl_edit_above_mainmenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/fl_main_menu"
         android:background="@color/bottom_banner_bg"
-        android:visibility="gone"></FrameLayout>
-
+        android:visibility="gone"/>
 </RelativeLayout>

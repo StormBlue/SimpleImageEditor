@@ -37,6 +37,9 @@ import com.yjing.imageeditlibrary.editimage.view.mosaic.MosaicView;
  * 包含 1.贴图 2.滤镜 3.剪裁 4.底图旋转 功能
  */
 public class EditImageActivity extends BaseActivity {
+
+    private static final String TAG = "EditImageActivity";
+
     public static final String FILE_PATH = "file_path";
     public static final String EXTRA_OUTPUT = "extra_output";
     public static final String SAVE_FILE_PATH = "save_file_path";
@@ -97,13 +100,13 @@ public class EditImageActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         checkInitImageLoader();
         setContentView(R.layout.activity_image_edit);
-        initView();
-        getData();
+        init();
     }
 
-    private void getData() {
+    private void init() {
         filePath = getIntent().getStringExtra(FILE_PATH);
         saveFilePath = getIntent().getStringExtra(EXTRA_OUTPUT);// 保存图片路径
+        initView();
         loadImage(filePath);
     }
 
@@ -122,7 +125,6 @@ public class EditImageActivity extends BaseActivity {
         saveBtn = findViewById(R.id.save_btn);
         saveBtn.setOnClickListener(new SaveBtnClick(true, null));
 
-        mainImage = (ImageViewTouch) findViewById(R.id.main_image);
         backBtn = findViewById(R.id.back_btn);// 退出按钮
         backBtn.setOnClickListener(new OnClickListener() {
             @Override
@@ -131,12 +133,13 @@ public class EditImageActivity extends BaseActivity {
             }
         });
 
+        mainImage = (ImageViewTouch) findViewById(R.id.main_image);
+        mPaintView = (CustomPaintView) findViewById(R.id.custom_paint_view);
         mStickerView = (StickerView) findViewById(R.id.sticker_panel);
+        mTextStickerView = (TextStickerView) findViewById(R.id.text_sticker_panel);
+        mMosaicView = (MosaicView) findViewById(R.id.mosaic_view);
         mCropPanel = (CropImageView) findViewById(R.id.crop_panel);
         mRotatePanel = (RotateImageView) findViewById(R.id.rotate_panel);
-        mTextStickerView = (TextStickerView) findViewById(R.id.text_sticker_panel);
-        mPaintView = (CustomPaintView) findViewById(R.id.custom_paint_view);
-        mMosaicView = (MosaicView) findViewById(R.id.mosaic_view);
 
         //放功能键的容器
         View fl_edit_bottom_height = findViewById(R.id.fl_edit_bottom_height);

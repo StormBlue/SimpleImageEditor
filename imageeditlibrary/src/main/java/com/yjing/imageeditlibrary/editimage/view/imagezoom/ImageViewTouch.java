@@ -24,7 +24,7 @@ public class ImageViewTouch extends ImageViewTouchBase {
     protected OnGestureListener mGestureListener;
     protected OnScaleGestureListener mScaleListener;
     protected boolean mDoubleTapEnabled = true;
-    protected boolean mScaleEnabled = false;//暂时禁用图片的缩放功能
+    protected boolean mScaleEnabled = true;//暂时禁用图片的缩放功能
     protected boolean mScrollEnabled = true;
     private OnImageViewTouchDoubleTapListener mDoubleTapListener;
     private OnImageViewTouchSingleTapListener mSingleTapListener;
